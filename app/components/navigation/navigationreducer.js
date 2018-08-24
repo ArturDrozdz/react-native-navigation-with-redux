@@ -1,6 +1,6 @@
 import createReducer from '../../utils/createReducer'
 import * as types from '../../actions/types'
-import Screens from '../../utils/screens'
+import Screens from '../../consts/screens'
 
 export const navigation = createReducer({
 	screen: Screens.TOP,
