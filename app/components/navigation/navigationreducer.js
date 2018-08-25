@@ -1,16 +1,20 @@
 import createReducer from '../../utils/createReducer'
 import * as types from '../../actions/types'
-import Screens from '../../consts/screens'
+import SCREENS from '../../consts/screens'
 
 export const navigation = createReducer({
-	screen: Screens.TOP,
+	screen: SCREENS.TOP,
 	history: []
 }, {
 
 	[types.NAVIGATION_CHANGE](state, action) {
 
 		const history = state.history;
-		history.push(state.screen);
+
+		const screensToSkip = [SCREENS.DETAILS];
+		if (screensToSkip.indexOf(state.screen) === -1) {
+			history.push(state.screen);
+		}
 
 		let newState = {
 			...state,
