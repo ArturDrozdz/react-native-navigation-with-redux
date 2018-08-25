@@ -4,16 +4,18 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../actions'
 import SCREENS from '../consts/screens'
+import Styles from '../utils/styles'
 
 class Top extends Component {
 	render() {
 		return (
-			<View style={{ padding: 10 }}>
-				<Text style={{ fontSize: 20 }}>Let's see what's on top.</Text>
+			<View style={Styles.view}>
+				<Text style={Styles.text}>Let's see what's on top.</Text>
 				<TouchableOpacity
+					style={Styles.button}
 					onPress={() => { this.props.navigate(SCREENS.DETAILS); }}
 				>
-					<Text>Show me some details</Text>
+					<Text style={Styles.buttonText}>Show me some details</Text>
 				</TouchableOpacity>
 			</View>
 		)

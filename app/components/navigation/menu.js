@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../../actions'
-// import Style from '../../utils/style'
+import Styles from '../../utils/styles'
 import SCREENS from '../../consts/screens'
 
 import {
@@ -59,7 +59,7 @@ class Menu extends Component {
 					paddingTop: spaceBetween / 2
 				}}>
 					{this.options.map(option => {
-						const bgColor = screen === option.screen ? '#2E4053' : '#5D6D7E';
+						const bgColor = screen === option.screen ? Styles.primaryDark : Styles.primaryLight;
 						return (
 							<View key={option.label} style={{ alignItems: 'center' }}>
 								<TouchableOpacity
