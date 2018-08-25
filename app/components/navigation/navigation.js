@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../../actions'
-import { View } from 'react-native';
+import { View, BackHandler } from 'react-native';
 import SCREENS from '../../consts/screens'
 import Menu from './menu'
 import Top from '../top'
@@ -10,6 +10,16 @@ import Search from '../search'
 import Profile from '../profile'
 
 class Navigation extends Component {
+
+	componentDidMount() {
+		BackHandler.addEventListener('hardwareBackPress', () => {
+			if(this.props.navigation.history.length) {
+				this.props.navigateBack();
+				return true;
+			}
+			return false;
+		});
+	}
 
 	getScreen(screen) {
 		switch (screen) {

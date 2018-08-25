@@ -26,7 +26,7 @@ export const navigation = createReducer({
 		const last = state.history.pop();
 		let newState = {
 			...state,
-			option: last,
+			screen: last,
 			history: state.history.splice(-1,1)
 		};
 		return newState;
