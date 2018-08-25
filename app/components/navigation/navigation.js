@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { ActionCreators } from '../../actions'
 import { View } from 'react-native';
 import SCREENS from '../../consts/screens'
+import Menu from './menu'
 import Top from '../top'
 import Search from '../search'
 import Profile from '../profile'
@@ -25,8 +26,11 @@ class Navigation extends Component {
 
 	render() {
 		return (
-			<View>
-				{this.getScreen(this.props.navigation.screen)}
+			<View style={{ flex: 1 }}>
+				<View style={{ flex: 1 }}>
+					{this.getScreen(this.props.navigation.screen)}
+				</View>
+				<Menu />
 			</View>
 		)
 	}
