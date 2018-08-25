@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
 
 
 export default class Search extends Component {
@@ -7,6 +7,7 @@ export default class Search extends Component {
 		return (
 			<View>
 				<Text>This is search screen!</Text>
+				<TextInput />
 			</View>
 		)
 	}

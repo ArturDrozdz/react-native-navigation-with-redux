@@ -18,7 +18,7 @@ class Menu extends Component {
 
 	constructor() {
 		super();
-		this.state = {};
+		this.state = { hideMenu: false };
 		this.options = [
 			{ screen: SCREENS.SEARCH, label: 'Search', icon: require('./icon_stores.png') },
 			{ screen: SCREENS.TOP, label: 'Top', icon: require('./icon_search.png') },
@@ -26,11 +26,22 @@ class Menu extends Component {
 		];
 	}
 
+	componentDidMount() {
+		this.keyboardWillShowListener = Keyboard.addListener('keyboardDidShow', () => {
+			this.setState({ hideMenu: true });
+		});
+    	this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
+			this.setState({ hideMenu: false });
+		});
+	}
+
 	navigate(screen) {
 		this.props.navigate(screen);
 	}
 
 	render() {
+
+		if (this.state.hideMenu) { return null; }
 
 		const { width } = Dimensions.get('window');
 		const spaceBetween = 8;
