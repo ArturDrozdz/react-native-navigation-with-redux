@@ -20,9 +20,9 @@ class Menu extends Component {
 		super();
 		this.state = { hideMenu: false };
 		this.options = [
-			{ screen: SCREENS.SEARCH, label: 'Search', icon: require('./icon_stores.png') },
-			{ screen: SCREENS.TOP, label: 'Top', icon: require('./icon_search.png') },
-			{ screen: SCREENS.PROFILE, label: 'Profile', icon: require('./icon_scan.png') }
+			{ screen: SCREENS.SEARCH, label: 'Search', icon: require('./icon_search.png') },
+			{ screen: SCREENS.TOP, label: 'Top', icon: require('./icon_top.png') },
+			{ screen: SCREENS.PROFILE, label: 'Profile', icon: require('./icon_user.png') }
 		];
 	}
 
@@ -72,7 +72,7 @@ class Menu extends Component {
 										justifyContent: 'center'
 									}}
 									onPress={this.navigate.bind(this, option.screen)}>
-									<Image source={option.icon} style={{ resizeMode: "contain", width: '80%',  height: '80%' }} />
+									<Image source={option.icon} style={{ resizeMode: "contain", width: '75%',  height: '75%' }} />
 								</TouchableOpacity>
 								<Text style={{
 									color: '#000000'
