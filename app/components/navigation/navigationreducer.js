@@ -8,11 +8,9 @@ export const navigation = createReducer({
 }, {
 
 	[types.NAVIGATION_CHANGE](state, action) {
-		const history = state.history;
 
-		if (state.screen) {
-			history.push(state.screen);
-		}
+		const history = state.history;
+		history.push(state.screen);
 
 		let newState = {
 			...state,
