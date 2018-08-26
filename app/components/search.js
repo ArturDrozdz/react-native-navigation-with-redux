@@ -6,7 +6,7 @@ export default class Search extends Component {
 	render() {
 		return (
 			<View style={Styles.view}>
-				<Text style={Styles.text}>This is search screen!</Text>
+				<Text style={Styles.text}>Search screen!</Text>
 				<TextInput />
 			</View>
 		)
